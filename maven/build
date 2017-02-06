@@ -23,6 +23,7 @@ export MAVEN_SKIP_RC
 
 # Run maven with custom settings
 exec "$M2_HOME/bin/mvn" \
-    -Devalguide.basedir="$dirname" \
-    -s "$dirname/settings/settings-localrepo.xml" \
-    $*
+    -Dmaven.repo.local=$dirname/localRepo \
+    -s "$dirname/settings/settings-mine.xml" \
+    "$@"
+
